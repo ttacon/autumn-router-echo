@@ -1,0 +1,38 @@
+package {{.PackageName}}
+
+import (
+    "github.com/labstack/echo"
+
+    // Autumn uses a standard project configuration.
+    "{{.ProjectName}}/lib/controllers"
+)
+
+func attachHandlers(router *echo.Echo) {
+     router.GET("/:id", {{call ToLowerCase .Name}}Get)
+     router.POST("/",  {{call ToLowerCase .Name}}Create)
+     router.PUT("/:id",  {{call ToLowerCase .Name}}Update)
+     router.DELETE("/:id",  {{call ToLowerCase .Name}}Delete)
+     router.GET("/",  {{call ToLowerCase .Name}}List)
+}
+
+func {{call ToLowerCase .Name}}Get(c echo.Context) error {
+     id := c.Param("id")
+}
+
+func {{call ToLowerCase .Name}}Create(c echo.Context) error {
+
+}
+
+func {{call ToLowerCase .Name}}Update(c echo.Context) error {
+     id := c.Param("id")
+
+}
+
+func {{call ToLowerCase .Name}}Delete(c echo.Context) error {
+     id := c.Param("id")
+
+}
+
+func {{call ToLowerCase .Name}}List(c echo.Context) error {
+
+}
